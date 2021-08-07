@@ -4,7 +4,7 @@
 
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="ikachan" file="ikachan" main="Main" version="0.0.1" company="HaxeFlixel" />
+	<app title="Ikachan" file="Ikachan" main="Main" version="0.0.1" company="HaxeFlixel" />
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
@@ -81,5 +81,10 @@
 	<!-- _________________________________ Custom _______________________________ -->
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
-	<icon path="assets/data/icon.png"/>
+	<icon path="assets/data/icon16.png" width="16" height="16" />
+	<icon path="assets/data/icon32.png" width="32" height="32" />
+	<icon path="assets/data/icon64.png" width="64" height="64" />
+	<icon path="assets/data/icon128.png" width="128" height="128" />
+	<icon path="assets/data/icon256.png" width="256" height="256" />
+	<icon path="assets/data/icon256.png" width="512" height="512" />
 </project>

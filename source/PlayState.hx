@@ -2,26 +2,35 @@ package;
 
 import flixel.FlxState;
 import flixel.FlxG;
-import flixel.math.FlxRandom;
+import flixel.FlxSprite;
+import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
 	override public function create()
 	{
 		super.create();
+
+		FlxG.mouse.visible = false;
+
+		playSong('mizuno');
+
+		var L = new FlxSprite();
+		var back = new FlxSprite();
+
+		back.makeGraphic(640, 480, FlxColor.WHITE);
+		back.screenCenter();
+        add(back);
+
+		L.loadGraphic("assets/images/Opening.png", true, 48, 64);
+		L.screenCenter();
+		pixelZoom(L);
+		add(L);
 	}
 
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		if (FlxG.keys.justPressed.ONE)
-		{
-			playSong('tidepool');
-		}
-		if (FlxG.keys.justPressed.TWO)
-		{
-			playSong('ikachan');
-		}
 	}
 
 	public function playSong(song:String)
@@ -59,5 +68,9 @@ class PlayState extends FlxState
 					FlxG.sound.playMusic(AssetPaths.magirete_Loop__wav, 1, true);
 				}
 		}
+	}
+	public function pixelZoom(sprite:FlxSprite)
+	{
+		sprite.setGraphicSize(Std.int(sprite.width * 2));
 	}
 }
