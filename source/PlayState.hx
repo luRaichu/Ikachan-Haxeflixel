@@ -3,7 +3,6 @@ package;
 import flixel.FlxState;
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
@@ -12,20 +11,6 @@ class PlayState extends FlxState
 		super.create();
 
 		FlxG.mouse.visible = false;
-
-		playSong('mizuno');
-
-		var L = new FlxSprite();
-		var back = new FlxSprite();
-
-		back.makeGraphic(640, 480, FlxColor.WHITE);
-		back.screenCenter();
-        add(back);
-
-		L.loadGraphic("assets/images/Opening.png", true, 48, 64);
-		L.screenCenter();
-		pixelZoom(L);
-		add(L);
 	}
 
 	override public function update(elapsed:Float)
@@ -33,7 +18,7 @@ class PlayState extends FlxState
 		super.update(elapsed);
 	}
 
-	public function playSong(song:String)
+	static public function playSong(song:String)
 	{
 		switch song
 		{
@@ -69,7 +54,7 @@ class PlayState extends FlxState
 				}
 		}
 	}
-	public function pixelZoom(sprite:FlxSprite)
+	static public function pixelZoom(sprite:FlxSprite)
 	{
 		sprite.setGraphicSize(Std.int(sprite.width * 2));
 	}
