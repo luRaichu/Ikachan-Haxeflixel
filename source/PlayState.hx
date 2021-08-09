@@ -13,10 +13,6 @@ class PlayState extends FlxTransitionableState
 		super.create();
 		var back = new FlxSprite();
 
-		back.makeGraphic(640, 480, FlxColor.GREEN);
-		back.screenCenter();
-        add(back);
-
 		CoolFunctions.playSong('ikachan');
 		CoolFunctions.fadeShit();
 	}
@@ -24,9 +20,5 @@ class PlayState extends FlxTransitionableState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		if (FlxG.keys.justPressed.F)
-		{
-			FlxG.switchState(new TitleState());
-		}
 	}
 }

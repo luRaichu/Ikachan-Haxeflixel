@@ -68,12 +68,13 @@ class TitleState extends FlxTransitionableState
 		{
 			CoolFunctions.move(title, 0, 1);
 		}
-		if (pixel.x * 2 != 320)
+		if (pixel.x > 128)
 		{
 			// Move 'Made by Studio Pixel' text
 			CoolFunctions.move(pixel, -2, 0);
+			trace(pixel.x);
 		}
-		if (FlxG.keys.justPressed.F)
+		if (FlxG.keys.justPressed.Z)
 		{
 			FlxG.switchState(new PlayState());
 		}
