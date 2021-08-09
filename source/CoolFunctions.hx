@@ -2,6 +2,13 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.addons.transition.FlxTransitionableState;
+import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileCircle;
+import flixel.addons.transition.TransitionData;
+import flixel.math.FlxPoint;
+import flixel.math.FlxRect;
+import flixel.graphics.FlxGraphic;
+import flixel.util.FlxColor;
 
 class CoolFunctions
 {
@@ -57,4 +64,20 @@ class CoolFunctions
             sprite.y = why * 2;
         }
         // TODO: ADD A FUNCTION TO ADD SPRITES (MAYBE)
+        static public function fadeShit()
+        {
+            var transOut;
+            var transIn;
+            var diamond:FlxGraphic = FlxGraphic.fromClass(GraphicTransTileCircle);
+            diamond.persist = true;
+            diamond.destroyOnNoUse = false;
+    
+            FlxTransitionableState.defaultTransOut = new TransitionData(TILES, FlxColor.BLACK, 0.7, new FlxPoint(1, -1),
+                {asset: diamond, width: 32, height: 32}, new FlxRect(-200, -200, FlxG.width * 1.4, FlxG.height * 1.4));
+            FlxTransitionableState.defaultTransIn = new TransitionData(TILES, FlxColor.BLACK, 1, new FlxPoint(1, -1),
+                {asset: diamond, width: 32, height: 32}, new FlxRect(-200, -200, FlxG.width * 1.4, FlxG.height * 1.4));
+    
+            transOut = FlxTransitionableState.defaultTransOut;
+            transIn = FlxTransitionableState.defaultTransIn;
+        }
 }

@@ -4,10 +4,10 @@ import flixel.FlxState;
 import flixel.FlxG;
 import flixel.util.FlxColor;
 import flixel.FlxSprite;
-import flixel.animation.FlxBaseAnimation;
 import flixel.graphics.frames.FlxAtlasFrames;
+import flixel.addons.transition.FlxTransitionableState;
 
-class TitleState extends FlxState
+class TitleState extends FlxTransitionableState
 {
 	public var title = new FlxSprite();
 	public var pixel = new FlxSprite();
@@ -22,6 +22,7 @@ class TitleState extends FlxState
 		FlxG.mouse.visible = false;
 
 		CoolFunctions.playSong('mizuno');
+		CoolFunctions.fadeShit();
 
 		var L = new FlxSprite();
 		var R = new FlxSprite();
@@ -71,6 +72,10 @@ class TitleState extends FlxState
 		{
 			// Move 'Made by Studio Pixel' text
 			CoolFunctions.move(pixel, -2, 0);
+		}
+		if (FlxG.keys.justPressed.F)
+		{
+			FlxG.switchState(new PlayState());
 		}
     }
 }
