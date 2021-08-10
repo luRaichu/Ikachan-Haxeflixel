@@ -48,21 +48,6 @@ class CoolFunctions
                     }
             }
         }
-        static public function pixelZoom(sprite:FlxSprite)
-        {
-            sprite.setGraphicSize(Std.int(sprite.width * 2));
-            sprite.updateHitbox();
-        }
-        static public function move(sprite:FlxSprite, x:Int, y:Int) // gotta change this later for 320 x 240 support
-        {
-            sprite.x += x * 2;
-            sprite.y += y * 2;
-        }
-        static public function set(sprite:FlxSprite, ex:Int, why:Int)
-        {
-            sprite.x = ex * 2;
-            sprite.y = why * 2;
-        }
         // TODO: ADD A FUNCTION TO ADD SPRITES (MAYBE)
         static public function fadeShit()
         {

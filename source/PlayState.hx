@@ -10,6 +10,7 @@ import flixel.addons.transition.FlxTransitionableState;
 class PlayState extends FlxTransitionableState
 {
 	// doing the yandere dev
+	static var blank = FlxColor.fromString("#000000");
 	static var a = FlxColor.fromString("#0000FF");
 	static var b = FlxColor.fromString("#1F45F1");
 	static var c = FlxColor.fromString("#001F98");
@@ -42,7 +43,7 @@ class PlayState extends FlxTransitionableState
 		CoolFunctions.playSong('ikachan');
 		CoolFunctions.fadeShit();
 
-		map.loadMapFromGraphic("assets/images/Map1.png", true, 1, [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t], "assets/images/tileset.png", 16, 16, 0, 1, 0);
+		map.loadMapFromGraphic("assets/images/Map1.png", true, 1, [blank, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t], "assets/images/tileset.png", 16, 16, 0, 1, 0);
 		add(map);
 	}
 

@@ -11,7 +11,6 @@ class TitleState extends FlxTransitionableState
 {
 	public var title = new FlxSprite();
 	public var pixel = new FlxSprite();
-	public var pixel_x = 320;
 
 	var tex:FlxAtlasFrames;
 
@@ -29,33 +28,28 @@ class TitleState extends FlxTransitionableState
 		var back = new FlxSprite();
 		var crab = new FlxSprite();
 
-		back.makeGraphic(640, 480, FlxColor.CYAN);
+		back.makeGraphic(320, 240, FlxColor.CYAN);
 		back.screenCenter();
         add(back);
 
 		title.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
 		title.animation.addByPrefix('title', 'title', 24, false);
-		CoolFunctions.pixelZoom(title);
-		CoolFunctions.set(title, 65, -83);
+		title.x = 65;
+		title.y = -83;
 		title.animation.play('title');
 		add(title);
 
 		crab.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
 		crab.animation.addByPrefix('crab', 'crab', 24, false);
-		CoolFunctions.pixelZoom(crab);
-		CoolFunctions.set(crab, 132, 137);
+		crab.x = 132;
+		crab.y = 137;
 		crab.animation.play('crab');
 		add(crab);
 
-		L.loadGraphic("assets/images/Opening.png", true, 48, 64);
-		CoolFunctions.pixelZoom(L);
-		L.screenCenter();
-		//add(L);
-
 		pixel.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
 		pixel.animation.addByPrefix('pixel', 'pixel', 24, false);
-		CoolFunctions.pixelZoom(pixel);
-		CoolFunctions.set(pixel, 320, 205);
+		pixel.x = 320;
+		pixel.y = 205;
 		pixel.animation.play('pixel');
 		add(pixel);
 
@@ -64,14 +58,14 @@ class TitleState extends FlxTransitionableState
     override public function update(elapsed:Float):Void
     {
         super.update(elapsed);
-		if (title.y < 90)
+		if (title.y < 45)
 		{
-			CoolFunctions.move(title, 0, 1);
+			title.y += 1;
 		}
-		if (pixel.x > 128)
+		if (pixel.x > 64)
 		{
 			// Move 'Made by Studio Pixel' text
-			CoolFunctions.move(pixel, -2, 0);
+			pixel.x -= 2;
 			trace(pixel.x);
 		}
 		if (FlxG.keys.justPressed.Z)
