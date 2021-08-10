@@ -49,6 +49,7 @@ class PlayState extends FlxTransitionableState
 		add(bg);
 
 		map.loadMapFromGraphic("assets/images/Map1.png", true, 1, [blank, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t], "assets/images/tileset.png", 16, 16, 0, 1, 0);
+		map.useScaleHack = false;
 		add(map);
 	}
 
