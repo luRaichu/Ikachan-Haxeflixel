@@ -66,7 +66,6 @@ class TitleState extends FlxTransitionableState
 		{
 			// Move 'Made by Studio Pixel' text
 			pixel.x -= 2;
-			trace(pixel.x);
 		}
 		if (FlxG.keys.justPressed.Z)
 		{

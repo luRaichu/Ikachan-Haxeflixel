@@ -1,5 +1,6 @@
 package;
 
+import flixel.addons.display.FlxBackdrop;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
 import flixel.FlxState;
@@ -33,7 +34,7 @@ class PlayState extends FlxTransitionableState
 	static var t = FlxColor.fromString("#918086");
 
 	public var map = new FlxTilemap();
-	
+	public var bg:FlxBackdrop;
 
 	override public function create()
 	{
@@ -42,6 +43,10 @@ class PlayState extends FlxTransitionableState
 
 		CoolFunctions.playSong('ikachan');
 		CoolFunctions.fadeShit();
+
+		bg = new FlxBackdrop("assets/images/Back.png");
+		bg.scrollFactor.set(0.75, 0.75);
+		add(bg);
 
 		map.loadMapFromGraphic("assets/images/Map1.png", true, 1, [blank, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t], "assets/images/tileset.png", 16, 16, 0, 1, 0);
 		add(map);
