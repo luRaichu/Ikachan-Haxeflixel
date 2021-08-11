@@ -6,6 +6,7 @@ import flixel.util.FlxColor;
 import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.addons.transition.FlxTransitionableState;
+import flixel.input.touch.FlxTouch;
 
 class TitleState extends FlxTransitionableState
 {
@@ -18,8 +19,9 @@ class TitleState extends FlxTransitionableState
     {
         super.create();
 
+		#if !mobile
 		FlxG.mouse.visible = false;
-
+		#end
 		CoolFunctions.playSong('mizuno');
 		CoolFunctions.fadeShit();
 
@@ -67,9 +69,11 @@ class TitleState extends FlxTransitionableState
 			// Move 'Made by Studio Pixel' text
 			pixel.x -= 2;
 		}
+		#if !mobile
 		if (FlxG.keys.justPressed.Z)
 		{
 			FlxG.switchState(new PlayState());
 		}
+		#end
     }
 }

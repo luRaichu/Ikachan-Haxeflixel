@@ -56,6 +56,7 @@ class PlayState extends FlxTransitionableState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+		//#if !mobile
 		if (FlxG.keys.pressed.W)
 		{
 			map.y++;
@@ -72,5 +73,6 @@ class PlayState extends FlxTransitionableState
 		{
 			map.x--;
 		}
+		//#end
 	}
 }

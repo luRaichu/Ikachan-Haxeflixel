@@ -26,6 +26,8 @@
 
 	<!--Mobile-specific-->
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
+	<config:android gradle-version="7.0" />
+	<config:android gradle-plugin="7.0.0-alpha14" />
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
