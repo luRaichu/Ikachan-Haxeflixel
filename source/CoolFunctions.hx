@@ -17,34 +17,34 @@ class CoolFunctions
             switch song
             {
                 case 'tidepool':
-                    FlxG.sound.playMusic(AssetPaths.tidepool_Intro__wav, 1, false);
+                    FlxG.sound.playMusic(AssetPaths.tidepool_Intro__mp3, 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic(AssetPaths.tidepool_Loop__wav, 1, true);
+                        FlxG.sound.playMusic(AssetPaths.tidepool_Loop__mp3, 1, true);
                     }
                 case 'mizuno':
-                    FlxG.sound.playMusic(AssetPaths.mizuno_Intro__wav, 1, false);
+                    FlxG.sound.playMusic(AssetPaths.mizuno_Intro__mp3, 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic(AssetPaths.mizuno_Loop__wav, 1, true);
+                        FlxG.sound.playMusic(AssetPaths.mizuno_Loop__mp3, 1, true);
                     }
                 case 'quake':
-                    FlxG.sound.playMusic(AssetPaths.quake_Intro__wav, 1, false);
+                    FlxG.sound.playMusic(AssetPaths.quake_Intro__mp3, 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic(AssetPaths.quake_Loop__wav, 1, true);
+                        FlxG.sound.playMusic(AssetPaths.quake_Loop__mp3, 1, true);
                     }
                 case 'ikachan':
-                    FlxG.sound.playMusic(AssetPaths.ikachan_Intro__wav, 1, false);
+                    FlxG.sound.playMusic(AssetPaths.ikachan_Intro__mp3, 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic(AssetPaths.ikachan_Loop__wav, 1, true);
+                        FlxG.sound.playMusic(AssetPaths.ikachan_Loop__mp3, 1, true);
                     }
                 case 'buriki':
-                    FlxG.sound.playMusic(AssetPaths.buriki_Intro__wav, 1, false);
+                    FlxG.sound.playMusic(AssetPaths.buriki_Intro__mp3, 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic(AssetPaths.buriki_Loop__wav, 1, true);
+                        FlxG.sound.playMusic(AssetPaths.buriki_Loop__mp3, 1, true);
                     }
                 case 'magirete':
-                    FlxG.sound.playMusic(AssetPaths.magirete_Intro__wav, 1, false);
+                    FlxG.sound.playMusic(AssetPaths.magirete_Intro__mp3, 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic(AssetPaths.magirete_Loop__wav, 1, true);
+                        FlxG.sound.playMusic(AssetPaths.magirete_Loop__mp3, 1, true);
                     }
             }
         }
