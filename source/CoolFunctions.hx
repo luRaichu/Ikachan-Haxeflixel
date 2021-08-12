@@ -48,7 +48,7 @@ class CoolFunctions
                         FlxG.sound.playMusic("assets/music/mp3/magirete_Loop.mp3", 1, true);
                     }
                 #end
-                #if !web
+                #if desktop
                 case 'tidepool':
                     FlxG.sound.playMusic("assets/music/ogg/tidepool_Intro.ogg", 1, false);
                     FlxG.sound.music.onComplete = () -> {
