@@ -34,6 +34,8 @@ class TitleState extends FlxTransitionableState
 		back.screenCenter();
         add(back);
 
+		FlxG.sound.playMusic("assets/music/inst.mp3", 1, true);
+
 		title.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
 		title.animation.addByPrefix('title', 'title', 24, false);
 		title.x = 65;
