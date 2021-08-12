@@ -35,8 +35,8 @@
 	<source path="source" />
 	<assets path="assets" />
 
-	<assets path="assets/songs"    library="songs"    exclude="*.ogg" if="web"/>
-	<assets path="assets/songs"    library="songs"    exclude="*.mp3" unless="web"/>
+	<assets path="assets/music"    library="songs"    exclude="*.ogg" if="web"/>
+	<assets path="assets/music"    library="songs"    exclude="*.mp3" unless="web"/>
 
 	<!-- _______________________________ Libraries ______________________________ -->
 
