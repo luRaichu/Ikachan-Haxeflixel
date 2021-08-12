@@ -18,66 +18,66 @@ class CoolFunctions
             {
                 #if web
                 case 'tidepool':
-                    FlxG.sound.playMusic("assets/music/tidepool_Intro.mp3", 1, false);
+                    FlxG.sound.playMusic("assets/music/mp3/tidepool_Intro.mp3", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/tidepool_Loop.mp3", 1, true);
+                        FlxG.sound.playMusic("assets/music/mp3/tidepool_Loop.mp3", 1, true);
                     }
                 case 'mizuno':
-                    FlxG.sound.playMusic("assets/music/mizuno_Intro.mp3", 1, false);
+                    FlxG.sound.playMusic("assets/music/mp3/mizuno_Intro.mp3", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/mizuno_Loop.mp3", 1, true);
+                        FlxG.sound.playMusic("assets/music/mp3/mizuno_Loop.mp3", 1, true);
                     }
                 case 'quake':
-                    FlxG.sound.playMusic("assets/music/quake_Intro.mp3", 1, false);
+                    FlxG.sound.playMusic("assets/music/mp3/quake_Intro.mp3", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/quake_Loop.mp3", 1, true);
+                        FlxG.sound.playMusic("assets/music/mp3/quake_Loop.mp3", 1, true);
                     }
                 case 'ikachan':
-                    FlxG.sound.playMusic("assets/music/ikachan_Intro.mp3", 1, false);
+                    FlxG.sound.playMusic("assets/music/mp3/ikachan_Intro.mp3", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/ikachan_Loop.mp3", 1, true);
+                        FlxG.sound.playMusic("assets/music/mp3/ikachan_Loop.mp3", 1, true);
                     }
                 case 'buriki':
-                    FlxG.sound.playMusic("assets/music/buriki_Intro.mp3", 1, false);
+                    FlxG.sound.playMusic("assets/music/mp3/buriki_Intro.mp3", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/buriki_Loop.mp3", 1, true);
+                        FlxG.sound.playMusic("assets/music/mp3/buriki_Loop.mp3", 1, true);
                     }
                 case 'magirete':
-                    FlxG.sound.playMusic("assets/music/magirete_Intro.mp3", 1, false);
+                    FlxG.sound.playMusic("assets/music/mp3/magirete_Intro.mp3", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/magirete_Loop.mp3", 1, true);
+                        FlxG.sound.playMusic("assets/music/mp3/magirete_Loop.mp3", 1, true);
                     }
                 #end
                 #if !web
                 case 'tidepool':
-                    FlxG.sound.playMusic("assets/music/tidepool_Intro.ogg", 1, false);
+                    FlxG.sound.playMusic("assets/music/ogg/tidepool_Intro.ogg", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/tidepool_Loop.ogg", 1, true);
+                        FlxG.sound.playMusic("assets/music/ogg/tidepool_Loop.ogg", 1, true);
                     }
                 case 'mizuno':
-                    FlxG.sound.playMusic("assets/music/mizuno_Intro.ogg", 1, false);
+                    FlxG.sound.playMusic("assets/music/ogg/mizuno_Intro.ogg", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/mizuno_Loop.ogg", 1, true);
+                        FlxG.sound.playMusic("assets/music/ogg/mizuno_Loop.ogg", 1, true);
                     }
                 case 'quake':
-                    FlxG.sound.playMusic("assets/music/quake_Intro.ogg", 1, false);
+                    FlxG.sound.playMusic("assets/music/ogg/quake_Intro.ogg", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/quake_Loop.ogg", 1, true);
+                        FlxG.sound.playMusic("assets/music/ogg/quake_Loop.ogg", 1, true);
                     }
                 case 'ikachan':
-                    FlxG.sound.playMusic("assets/music/ikachan_Intro.ogg", 1, false);
+                    FlxG.sound.playMusic("assets/music/ogg/ikachan_Intro.ogg", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/ikachan_Loop.ogg", 1, true);
+                        FlxG.sound.playMusic("assets/music/ogg/ikachan_Loop.ogg", 1, true);
                     }
                 case 'buriki':
-                    FlxG.sound.playMusic("assets/music/buriki_Intro.ogg", 1, false);
+                    FlxG.sound.playMusic("assets/music/ogg/buriki_Intro.ogg", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/buriki_Loop.ogg", 1, true);
+                        FlxG.sound.playMusic("assets/music/ogg/buriki_Loop.ogg", 1, true);
                     }
                 case 'magirete':
-                    FlxG.sound.playMusic("assets/music/magirete_Intro.ogg", 1, false);
+                    FlxG.sound.playMusic("assets/music/ogg/magirete_Intro.ogg", 1, false);
                     FlxG.sound.music.onComplete = () -> {
-                        FlxG.sound.playMusic("assets/music/magirete_Loop.ogg", 1, true);
+                        FlxG.sound.playMusic("assets/music/ogg/magirete_Loop.ogg", 1, true);
                     }
                 #end
             }
