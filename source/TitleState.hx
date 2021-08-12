@@ -69,10 +69,18 @@ class TitleState extends FlxTransitionableState
 			// Move 'Made by Studio Pixel' text
 			pixel.x -= 2;
 		}
-		#if !mobile
+		#if FLX_KEYBOARD
 		if (FlxG.keys.justPressed.Z)
 		{
 			FlxG.switchState(new PlayState());
+		}
+		#end
+		#if mobile
+		for (touch in FlxG.touches.list)
+		{
+			if (touch.justPressed) {
+				FlxG.switchState(new PlayState());
+			}
 		}
 		#end
     }

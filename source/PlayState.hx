@@ -45,7 +45,7 @@ class PlayState extends FlxTransitionableState
 		CoolFunctions.fadeShit();
 
 		bg = new FlxBackdrop("assets/images/Back.png");
-		bg.scrollFactor.set(0.75, 0.75);
+		bg.scrollFactor.set(0.1, 0.1);
 		add(bg);
 
 		map.loadMapFromGraphic("assets/images/Map1.png", true, 1, [blank, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t], "assets/images/tileset.png", 16, 16, 0, 1, 0);
@@ -56,7 +56,7 @@ class PlayState extends FlxTransitionableState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		//#if !mobile
+		#if FLX_KEYBOARD
 		if (FlxG.keys.pressed.W)
 		{
 			map.y++;
@@ -73,6 +73,6 @@ class PlayState extends FlxTransitionableState
 		{
 			map.x--;
 		}
-		//#end
+		#end
 	}
 }
