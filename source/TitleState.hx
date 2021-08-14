@@ -1,19 +1,18 @@
 package;
 
-import flixel.FlxState;
 import flixel.FlxG;
 import flixel.util.FlxColor;
 import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.addons.transition.FlxTransitionableState;
-import flixel.input.touch.FlxTouch;
+import flixel.addons.display.FlxTiledSprite;
 
 class TitleState extends FlxTransitionableState
 {
-	public var title = new FlxSprite();
-	public var pixel = new FlxSprite();
-
-	var tex:FlxAtlasFrames;
+	public var L:FlxTiledSprite;
+	public var R:FlxTiledSprite;
+	public var title = new FlxSprite(65, -83);
+	public var pixel = new FlxSprite(320, 205);
 
     override public function create():Void
     {
@@ -24,34 +23,36 @@ class TitleState extends FlxTransitionableState
 		#end
 		CoolFunctions.playSong('mizuno');
 		CoolFunctions.fadeShit();
-
-		var L = new FlxSprite();
-		var R = new FlxSprite();
+		
 		var back = new FlxSprite();
-		var crab = new FlxSprite();
+		var crab = new FlxSprite(132, 137);
 
-		back.makeGraphic(320, 240, FlxColor.CYAN);
+		back.makeGraphic(320, 240, FlxColor.WHITE);
 		back.screenCenter();
         add(back);
 
+		L = new FlxTiledSprite("assets/images/BorderL.png", 48, FlxG.height * 4, false, true);
+		L.x = -128;
+		L.y = -128;
+		add(L);
+
+		R = new FlxTiledSprite("assets/images/BorderR.png", 248, FlxG.height * 4, false, true);
+		R.x = 400;
+		R.y = -128;
+		add(R);
+
 		title.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
 		title.animation.addByPrefix('title', 'title', 24, false);
-		title.x = 65;
-		title.y = -83;
 		title.animation.play('title');
 		add(title);
 
 		crab.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
 		crab.animation.addByPrefix('crab', 'crab', 24, false);
-		crab.x = 132;
-		crab.y = 137;
 		crab.animation.play('crab');
 		add(crab);
 
 		pixel.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
 		pixel.animation.addByPrefix('pixel', 'pixel', 24, false);
-		pixel.x = 320;
-		pixel.y = 205;
 		pixel.animation.play('pixel');
 		add(pixel);
 
@@ -83,5 +84,23 @@ class TitleState extends FlxTransitionableState
 			}
 		}
 		#end
+		L.y++;
+		R.y++;
+		if (L.y == 0)
+		{
+			L.y = -128;
+		}
+		if (R.y == 0)
+		{
+			R.y = -128;
+		}
+		if (L.x != 0)
+		{
+			L.x++;
+		}
+		if (R.x != 272)
+		{
+			R.x--;
+		}
     }
 }

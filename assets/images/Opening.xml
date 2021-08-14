@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="Opening.png">
+	<SubTexture name="left" x="0" y="0" width="48" height="64" frameX="0" frameY="0" frameWidth="48" frameHeight="64"/>
 	<SubTexture name="right" x="0" y="64" width="48" height="64" frameX="0" frameY="0" frameWidth="48" frameHeight="64"/>
 	<SubTexture name="title" x="48" y="0" width="200" height="64" frameX="0" frameY="0" frameWidth="200" frameHeight="64"/>
 	<SubTexture name="crab" x="248" y="0" width="72" height="67" frameX="0" frameY="0" frameWidth="72" frameHeight="67"/>

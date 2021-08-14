@@ -92,9 +92,9 @@ class CoolFunctions
             diamond.destroyOnNoUse = false;
     
             FlxTransitionableState.defaultTransOut = new TransitionData(TILES, FlxColor.BLACK, 0.7, new FlxPoint(1, -1),
-                {asset: diamond, width: 32, height: 32}, new FlxRect(-200, -200, FlxG.width * 1.4, FlxG.height * 1.4));
+                {asset: diamond, width: 16, height: 16}, new FlxRect(-200, -200, FlxG.width * 1.4, FlxG.height * 1.4));
             FlxTransitionableState.defaultTransIn = new TransitionData(TILES, FlxColor.BLACK, 1, new FlxPoint(1, -1),
-                {asset: diamond, width: 32, height: 32}, new FlxRect(-200, -200, FlxG.width * 1.4, FlxG.height * 1.4));
+                {asset: diamond, width: 16, height: 16}, new FlxRect(-200, -200, FlxG.width * 1.4, FlxG.height * 1.4));
     
             transOut = FlxTransitionableState.defaultTransOut;
             transIn = FlxTransitionableState.defaultTransIn;
