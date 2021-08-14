@@ -11,8 +11,9 @@ class TitleState extends FlxTransitionableState
 {
 	public var L:FlxTiledSprite;
 	public var R:FlxTiledSprite;
-	public var title = new FlxSprite(65, -83);
+	public var title = new FlxSprite(FlxG.width / 2 - 95, -83);
 	public var pixel = new FlxSprite(320, 205);
+	public var pressZ = new FlxSprite(FlxG.width / 2 - 32, FlxG.height / 2 + 6);
 
     override public function create():Void
     {
@@ -25,7 +26,7 @@ class TitleState extends FlxTransitionableState
 		CoolFunctions.fadeShit();
 		
 		var back = new FlxSprite();
-		var crab = new FlxSprite(132, 137);
+		var crab = new FlxSprite(FlxG.width / 2 - 28, FlxG.height / 2 + 17);
 
 		back.makeGraphic(320, 240, FlxColor.WHITE);
 		back.screenCenter();
@@ -104,7 +105,14 @@ class TitleState extends FlxTransitionableState
 		}
 		if (pixel.x == 64)
 		{
-			trace("SIMP");
+			pressZ.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
+			pressZ.animation.addByPrefix('pressZ', 'pressZ', 1, true);
+			pressZ.animation.play('pressZ');
+			add(pressZ);
+		}
+		if (FlxG.keys.pressed.O)
+		{
+			
 		}
     }
 }
