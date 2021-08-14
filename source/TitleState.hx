@@ -32,12 +32,12 @@ class TitleState extends FlxTransitionableState
         add(back);
 
 		L = new FlxTiledSprite("assets/images/BorderL.png", 48, FlxG.height * 4, false, true);
-		L.x = -128;
+		L.x = -64;
 		L.y = -128;
 		add(L);
 
 		R = new FlxTiledSprite("assets/images/BorderR.png", 248, FlxG.height * 4, false, true);
-		R.x = 400;
+		R.x = 336;
 		R.y = -128;
 		add(R);
 
@@ -61,15 +61,6 @@ class TitleState extends FlxTransitionableState
     override public function update(elapsed:Float):Void
     {
         super.update(elapsed);
-		if (title.y < 45)
-		{
-			title.y += 1;
-		}
-		if (pixel.x > 64)
-		{
-			// Move 'Made by Studio Pixel' text
-			pixel.x -= 2;
-		}
 		#if FLX_KEYBOARD
 		if (FlxG.keys.justPressed.Z)
 		{
@@ -96,11 +87,24 @@ class TitleState extends FlxTransitionableState
 		}
 		if (L.x != 0)
 		{
-			L.x++;
+			L.x += 1;
 		}
 		if (R.x != 272)
 		{
-			R.x--;
+			R.x -= 1;
+		}
+		if (title.y < 45)
+		{
+			title.y += 1;
+		}
+		if (pixel.x > 64)
+		{
+			// Move 'Made by Studio Pixel' text
+			pixel.x -= 2;
+		}
+		if (pixel.x == 64)
+		{
+			trace("SIMP");
 		}
     }
 }
