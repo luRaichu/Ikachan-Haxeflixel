@@ -1,5 +1,6 @@
 package;
 
+import flixel.effects.FlxFlicker;
 import flixel.FlxG;
 import flixel.util.FlxColor;
 import flixel.FlxSprite;
@@ -22,6 +23,7 @@ class TitleState extends FlxTransitionableState
 		#if !mobile
 		FlxG.mouse.visible = false;
 		#end
+
 		CoolFunctions.playSong('mizuno');
 		CoolFunctions.fadeShit();
 		
@@ -56,6 +58,8 @@ class TitleState extends FlxTransitionableState
 		pixel.animation.addByPrefix('pixel', 'pixel', 24, false);
 		pixel.animation.play('pixel');
 		add(pixel);
+
+		FlxFlicker.flicker(pressZ, 0, 0.7, false, true);
 
     }
 
@@ -106,13 +110,14 @@ class TitleState extends FlxTransitionableState
 		if (pixel.x == 64)
 		{
 			pressZ.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
-			pressZ.animation.addByPrefix('pressZ', 'pressZ', 1, true);
-			pressZ.animation.play('pressZ');
+			pressZ.animation.addByPrefix('Z', 'pressZ', 24, false);
+			pressZ.animation.addByPrefix('z', 'sub zero', 24, false);
+			pressZ.animation.play('Z');
 			add(pressZ);
 		}
 		if (FlxG.keys.pressed.O)
 		{
-			
+
 		}
     }
 }

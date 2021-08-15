@@ -10,7 +10,7 @@ import flixel.addons.transition.FlxTransitionableState;
 
 class PlayState extends FlxTransitionableState
 {
-	// doing the yandere dev
+	// not doing the yandere dev
 
 	public var map = new FlxTilemap();
 	public var bg:FlxBackdrop;
