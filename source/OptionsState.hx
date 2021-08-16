@@ -15,7 +15,6 @@ class TitleState extends FlxTransitionableState
 	public var title = new FlxSprite(FlxG.width / 2 - 95, -83);
 	public var pixel = new FlxSprite(320, 205);
 	public var pressZ = new FlxSprite(FlxG.width / 2 - 32, FlxG.height / 2 + 6);
-	public var border_x = -128;
 
     override public function create():Void
     {
@@ -36,12 +35,12 @@ class TitleState extends FlxTransitionableState
         add(back);
 
 		L = new FlxTiledSprite("assets/images/BorderL.png", 48, FlxG.height * 4, false, true);
-		L.x = border_x / 2;
+		L.x = -64;
 		L.y = -128;
 		add(L);
 
 		R = new FlxTiledSprite("assets/images/BorderR.png", 248, FlxG.height * 4, false, true);
-		R.x = FlxG.width - 48 - border_x / 2;
+		R.x = 336;
 		R.y = -128;
 		add(R);
 
@@ -87,23 +86,28 @@ class TitleState extends FlxTransitionableState
 		{
 			L.y = -128;
 		}
-		if (R.y == 0)
+		if (L.x != 0)
 		{
-			R.y = -128;
+			L.x += 1;
 		}
-		if (border_x / 2 < 0)
+		if (R.x != 272)
 		{
-			border_x++;
-			L.x = border_x / 2;
+			R.x -= 1;
+			if (R.x != 272)
+			{
+				R.x -= 1;
+				if (R.y == 0)
+				{
+					R.y = -128;
+				}
+			}
 		}
-		R.x = FlxG.width - 48 - border_x / 2;
 		if (title.y < 45)
 		{
 			title.y += 1;
 		}
 		if (pixel.x > 64)
 		{
-			// Move 'Made by Studio Pixel' text
 			pixel.x -= 2;
 		}
 		if (pixel.x == 64)
