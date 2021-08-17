@@ -6,6 +6,7 @@ haxelib install openfl
 haxelib install flixel
 haxelib install flixel-ui
 haxelib install flixel-addons
+haxelib install git djFlixel https://github.com/john32b/djFlixel.git
 ```
 Then
 ```haxelib set lime 7.7.0```
