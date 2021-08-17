@@ -18,7 +18,6 @@ class PlayState extends FlxTransitionableState
 	override public function create()
 	{
 		super.create();
-		var back = new FlxSprite();
 
 		CoolFunctions.playSong('ikachan');
 		CoolFunctions.fadeShit();

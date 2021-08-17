@@ -1,5 +1,6 @@
 package;
 
+import flixel.text.FlxText;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionableState;
@@ -47,6 +48,8 @@ class CoolFunctions
                     FlxG.sound.music.onComplete = () -> {
                         FlxG.sound.playMusic("assets/music/magirete_Loop.mp3", 1, true);
                     }
+                case 'lofi':
+                    FlxG.sound.playMusic("assets/music/mizuno_lofi.mp3", 1, true);
                 #end
                 #if desktop
                 case 'tidepool':
@@ -79,6 +82,8 @@ class CoolFunctions
                     FlxG.sound.music.onComplete = () -> {
                         FlxG.sound.playMusic("assets/music/magirete_Loop.ogg", 1, true);
                     }
+                case 'lofi':
+                    FlxG.sound.playMusic("assets/music/mizuno_lofi.ogg", 1, true);
                 #end
             }
         }

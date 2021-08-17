@@ -45,17 +45,17 @@ class TitleState extends FlxTransitionableState
 		R.y = -128;
 		add(R);
 
-		title.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
+		title.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/xml/Opening.xml");
 		title.animation.addByPrefix('title', 'title', 24, false);
 		title.animation.play('title');
 		add(title);
 
-		crab.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
+		crab.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/xml/Opening.xml");
 		crab.animation.addByPrefix('crab', 'crab', 24, false);
 		crab.animation.play('crab');
 		add(crab);
 
-		pixel.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
+		pixel.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/xml/Opening.xml");
 		pixel.animation.addByPrefix('pixel', 'pixel', 24, false);
 		pixel.animation.play('pixel');
 		add(pixel);
@@ -108,14 +108,21 @@ class TitleState extends FlxTransitionableState
 		}
 		if (pixel.x == 64)
 		{
-			pressZ.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/Opening.xml");
+			pressZ.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/xml/Opening.xml");
+			#if !mobile
 			pressZ.animation.addByPrefix('Z', 'pressZ', 24, false);
 			pressZ.animation.play('Z');
+			#end
+			#if mobile
+			pressZ.animation.addByPrefix('Z', 'monbile', 24, false);
+			pressZ.animation.play('Z');
+			#end
+
 			add(pressZ);
 		}
 		if (FlxG.keys.pressed.O)
 		{
-
+			FlxG.switchState(new OptionsState());
 		}
     }
 }
