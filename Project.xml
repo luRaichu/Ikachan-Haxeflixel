@@ -39,6 +39,7 @@
 	<assets path="assets/music" include="*.ogg" unless="web"/>
 
 	<assets path="assets/images/xml" embed='true'/>
+	<assets path="assets/misc" embed='true'/>
 
 	<!-- _______________________________ Libraries ______________________________ -->
 
@@ -46,7 +47,7 @@
 
 	<!--In case you want to use the addons package-->
 	<haxelib name="flixel-addons" />
-
+	<haxelib name="djFlixel" />
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
 
@@ -88,10 +89,10 @@
 	<!-- _________________________________ Custom _______________________________ -->
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
-	<icon path="assets/data/icon16.png" width="16" height="16" />
-	<icon path="assets/data/icon32.png" width="32" height="32" />
-	<icon path="assets/data/icon64.png" width="64" height="64" />
-	<icon path="assets/data/icon128.png" width="128" height="128" />
-	<icon path="assets/data/icon256.png" width="256" height="256" />
-	<icon path="assets/data/icon256.png" width="512" height="512" />
+	<icon path="assets/misc/icon16.png" width="16" height="16" />
+	<icon path="assets/misc/icon32.png" width="32" height="32" />
+	<icon path="assets/misc/icon64.png" width="64" height="64" />
+	<icon path="assets/misc/icon128.png" width="128" height="128" />
+	<icon path="assets/misc/icon256.png" width="256" height="256" />
+	<icon path="assets/misc/icon256.png" width="512" height="512" />
 </project>
