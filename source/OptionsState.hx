@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxSprite;
 import flixel.util.FlxColor;
 import flixel.text.FlxBitmapText;
 import flixel.FlxG;
@@ -10,6 +11,7 @@ import flixel.graphics.frames.FlxBitmapFont;
 class OptionsState extends FlxTransitionableState
 {
 	public var bg:FlxTiledSprite;
+	public var ika:FlxSprite;
 
     function addText(x, y, wrap, text)
     {
@@ -41,9 +43,23 @@ class OptionsState extends FlxTransitionableState
 		// JUST TESTIN SHIT HERE
 		/*var sp = new SpriteEffects('assets/images/Staff.png');
 		add(sp);
-		bg.addEffect("wave",  { id:"wave", time : 20, width : 10, height : 1 });*/
+		sp.addEffect("wave",  { id:"wave", time : 20, width : 10, height : 1 });*/
 
-		addText(0, 0, 0, "sussy balls");
+		var border = new FlxSprite(60, 28);
+		border.makeGraphic(200, 168, 0xFF5B201C);
+		add(border);
+
+		var box = new FlxSprite(64, 32);
+		box.makeGraphic(192, 160, 0xFF210000);
+		add(box);
+		
+		ika = new FlxSprite(80, 48);
+		ika.loadGraphic("assets/images/MyChar.png", true, 16, 16);
+		ika.animation.add("ika", [8], 24, true);
+		ika.animation.play("ika");
+		add(ika);
+
+		addText(0, 0, 0, "imposter sus!!! 1234");
 
     }
 
@@ -54,6 +70,14 @@ class OptionsState extends FlxTransitionableState
 		if (bg.x > 0)
 		{
 			bg.x = -64;
+		}
+		if (Input.gKeyUp())
+		{
+			ika.y -= 16;
+		}
+		if (FlxG.keys.justPressed.DOWN)
+		{
+			ika.y += 16;
 		}
 		if (FlxG.keys.justPressed.ESCAPE)
 		{

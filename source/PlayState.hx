@@ -1,5 +1,6 @@
 package;
 
+import flixel.ui.FlxVirtualPad;
 import flixel.addons.display.FlxBackdrop;
 import flixel.tile.FlxTilemap;
 import flixel.util.FlxColor;
@@ -14,6 +15,9 @@ class PlayState extends FlxTransitionableState
 
 	public var map = new FlxTilemap();
 	public var bg:FlxBackdrop;
+	#if mobile
+	public static var virtualPad:FlxVirtualPad;
+	#end
 
 	override public function create()
 	{
@@ -56,23 +60,21 @@ class PlayState extends FlxTransitionableState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		#if FLX_KEYBOARD
-		if (FlxG.keys.pressed.W)
+		if (Input.gKey('KEY_UP'))
 		{
 			map.y++;
 		}
-		if (FlxG.keys.pressed.S)
+		if (Input.gKey('KEY_DOWN'))
 		{
 			map.y--;
 		}
-		if (FlxG.keys.pressed.A)
+		if (Input.gKey('KEY_LEFT'))
 		{
 			map.x++;
 		}
-		if (FlxG.keys.pressed.D)
+		if (Input.gKey('KEY_RIGHT'))
 		{
 			map.x--;
 		}
-		#end
 	}
 }

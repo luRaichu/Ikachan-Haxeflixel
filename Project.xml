@@ -26,20 +26,24 @@
 
 	<!--Mobile-specific-->
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
+	
 	<config:android gradle-version="7.0" />
 	<config:android gradle-plugin="7.0.0-alpha14" />
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
-	<set name="BUILD_DIR" value="export" />
-	<source path="source" />
+	<set name="BUILD_DIR" value="export/debug" if="debug" />
+	<set name="BUILD_DIR" value="export/release" unless="debug" />
+	<set name="BUILD_DIR" value="export/32bit" if="32bit" />
+
+	<classpath name="source" />
 	<assets path="assets" />
 
 	<assets path="assets/music" include="*.mp3" if="web"/>
 	<assets path="assets/music" include="*.ogg" unless="web"/>
 
-	<assets path="assets/images/xml" embed='true'/>
-	<assets path="assets/misc" embed='true'/>
+	<library name="shared" embed='true'/>
+	<library name="misc" embed='true'/>
 
 	<!-- _______________________________ Libraries ______________________________ -->
 

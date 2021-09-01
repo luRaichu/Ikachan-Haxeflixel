@@ -35,6 +35,11 @@ class TitleState extends FlxTransitionableState
 		back.screenCenter();
         add(back);
 
+		pixel.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/xml/Opening.xml");
+		pixel.animation.addByPrefix('pixel', 'pixel', 24, false);
+		pixel.animation.play('pixel');
+		add(pixel);
+
 		L = new FlxTiledSprite("assets/images/BorderL.png", 48, FlxG.height * 4, false, true);
 		L.x = border_x / 2;
 		L.y = -128;
@@ -54,11 +59,6 @@ class TitleState extends FlxTransitionableState
 		crab.animation.addByPrefix('crab', 'crab', 24, false);
 		crab.animation.play('crab');
 		add(crab);
-
-		pixel.frames = FlxAtlasFrames.fromSparrow("assets/images/Opening.png", "assets/images/xml/Opening.xml");
-		pixel.animation.addByPrefix('pixel', 'pixel', 24, false);
-		pixel.animation.play('pixel');
-		add(pixel);
 
 		FlxFlicker.flicker(pressZ, 0, 0.7, false, true);
 
@@ -120,7 +120,7 @@ class TitleState extends FlxTransitionableState
 
 			add(pressZ);
 		}
-		if (FlxG.keys.pressed.O)
+		if (Input.gKey('KEY_S'))
 		{
 			FlxG.switchState(new OptionsState());
 		}
